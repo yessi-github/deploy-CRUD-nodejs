@@ -1,0 +1,35 @@
+<table id="myTable" class="table table-striped table-responsive-md btn-table">
+  <thead>
+    <tr>
+      <th>ID</th> {{!-- Scope = negritas --}}
+        <th class="th-sm" >Name</th>
+        <th class="th-sm">price</th>
+        <th class="th-sm">image</th>
+        <th class="th-sm">category</th>
+        <th class="th-sm">description</th>
+    </tr>
+    </thead>
+    <tbody>
+        {{!-- el gato sirve para decir que es un foreach  los siguientes tenemos que poner exactamente los nombres que tengo en la base de datos--}}
+        {{#products}}
+        <tr> 
+            <br>
+            <td>{{_id}}</td>
+            <td>{{name}}</td>
+            <td>{{price}}</td>
+            <td>{{image}}</td>
+            <td>{{category}}</td>
+            <td>{{description}}</td>
+            <td>
+              <form action="/api/product/{{_id}}" method="GET">
+                <button class="btn btn-primary"type="submit">Editar</button>
+              </form>
+            </td>
+            <td>
+              <form action="/api/product/{{_id}}" method="GET">
+                <button class="btn btn-primary"type="submit">Eliminar</button>
+              </form>
+            </td>
+        </tr>
+        {{/products}}
+    </tbody>
