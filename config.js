@@ -1,5 +1,5 @@
 module.exports={
-    host:'localhost'|| '0.0.0.0',
+    host:'0.0.0.0'|| 'localhost',
     port:process.env.PORT|| 3000,
     //conexion local
     //db: process.env.MONGODB || 'mongodb://localhost:27017/mytest2',
