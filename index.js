@@ -75,7 +75,7 @@ app.get('/api/product/:productId',(req,res)=>{
         if(!products) return res.status(404).send({message:`El producto no existe`});
         //res.status(200).send({product:todook})
         res.render('editar',{products});
-        //Sino encuentra un error rgresa el registroo del producto con el que eoligio
+        //Sino encuentra un error rgresa el registroo del producto con el que eligio
 
     }).lean();
 });
@@ -120,8 +120,8 @@ mongoose.connect( config.db, config.urlParser, ( err,res ) =>{
     }
     console.log('Conexion a la BD exitosa');
 
-    app.listen(config.port, ()=>{
-        console.log(`API-REST  yeiii ejecutando en http://localhost:${config.port}`)
+    app.listen(config.port,config.host,()=>{
+        console.log(`API-REST  yeiii ejecutando en http://${config.host}:${config.port}`)
 
     });
 });

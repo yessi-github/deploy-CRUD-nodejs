@@ -4,7 +4,8 @@
   "description": "CRUD de productos con motor de vistas",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "desarrollo": "nodemon index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,6 +17,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "method-override": "^3.0.0",
