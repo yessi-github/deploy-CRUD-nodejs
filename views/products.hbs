@@ -1,35 +1,54 @@
-<table id="myTable" class="table table-striped table-responsive-md btn-table">
-  <thead>
-    <tr>
-      <th>ID</th> {{!-- Scope = negritas --}}
-        <th class="th-sm" >Name</th>
-        <th class="th-sm">price</th>
-        <th class="th-sm">image</th>
-        <th class="th-sm">category</th>
-        <th class="th-sm">description</th>
-    </tr>
-    </thead>
-    <tbody>
-        {{!-- el gato sirve para decir que es un foreach  los siguientes tenemos que poner exactamente los nombres que tengo en la base de datos--}}
-        {{#products}}
-        <tr> 
-            <br>
-            <td>{{_id}}</td>
-            <td>{{name}}</td>
-            <td>{{price}}</td>
-            <td>{{image}}</td>
-            <td>{{category}}</td>
-            <td>{{description}}</td>
-            <td>
-              <form action="/api/product/{{_id}}" method="GET">
-                <button class="btn btn-primary"type="submit">Editar</button>
-              </form>
-            </td>
-            <td>
-              <form action="/api/product/{{_id}}" method="GET">
-                <button class="btn btn-primary"type="submit">Eliminar</button>
-              </form>
-            </td>
-        </tr>
-        {{/products}}
-    </tbody>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="/static/css/styles.css" rel="stylesheet" id="style-css">
+     <script src="/static/js/bootstrap.min.js"></script>   
+    <title>Editar</title>
+</head>
+<section class="hero">
+        <div class="hero-content">  
+            <h2>Todos los productos</h2>
+        </div>
+</section>
+<div class="container">
+      <table id="myTable" class="table table-striped table-responsive-md btn-table subir-table">
+        <thead>
+          <tr>
+            <th>ID</th> {{!-- Scope = negritas --}}
+              <th class="th-sm" >NOMBRE</th>
+              <th class="th-sm">PRECIO</th>
+              <th class="th-sm">IMAGEN</th>
+              <th class="th-sm">CATEGORíA</th>
+              <th class="th-sm">DESCRIPCIÓN</th>
+              <th class="th-sm"></th>
+              <th class="th-sm"></th>
+          </tr>
+          </thead>
+          <tbody>
+              {{!-- el gato sirve para decir que es un foreach  los siguientes tenemos que poner exactamente los nombres que tengo en la base de datos--}}
+              {{#products}}
+              <tr> 
+                  <br>
+                  <td>{{_id}}</td>
+                  <td>{{name}}</td>
+                  <td>{{price}}</td>
+                  <td>{{image}}</td>
+                  <td>{{category}}</td>
+                  <td>{{description}}</td>
+                  <td>
+                    <form action="/api/product/{{_id}}" method="GET">
+                      <button class="btn btn-primary btn-color"type="submit">Editar</button>
+                    </form>
+                  </td>
+                  <td>
+                    <form action="/api/product/{{_id}}" method="GET">
+                      <button class="btn btn-primary btn-color"type="submit">Eliminar</button>
+                    </form>
+                  </td>
+              </tr>
+              {{/products}}
+          </tbody>
+      </table>
+  </div>
+</html>

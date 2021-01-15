@@ -3,24 +3,65 @@
 <head>
    
     <link href="/static/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="/static/css/styles.css" rel="stylesheet" id="style-css">
      <script src="/static/js/bootstrap.min.js"></script>   
-    <title>Document</title>
+    <title>Editar</title>
 </head>
-<!--   The idea is to use a header to override the method. The following example 
-    is to override POST method to create PUT and DELETE method.    --> 
-    <!--<form action="/api/product/{{_id}}" method="PUT">-->
-    <form action="/api/product/{{products._id}}?_method=PUT" method="post">
-    <input type="hidden" name="_method" value="PUT">
+<section class="hero">
+        <div class="hero-content">  
+            <h2>Modificar un producto</h2>
+        </div>
+</section>
+<main>
+    <div class="container">
+        <form action="/api/product/{{products._id}}?_method=PUT" method="post">
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label>ID</label>
+                <input type="text" disabled class="form-control input-borde" value ="{{products._id}}"  name = "_id">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label>Nombre</label>
+                <input type="text" class ="form-control input-borde" value="{{products.name}}" name="name">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label>Precio</label>
+                <input type="number" class ="form-control input-borde" value="{{products.price}}" name="price">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label>Categoria</label>
+                <select name = "category" class="form-control input-borde" value="{{products.category}}">
+                    <option value="computers">Computers</option>
+                    <option value="phones">Phones</option>
+                    <option value="accesories">Accesories</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label>Descripción</label>
+                <input type="text" class="form-control input-borde" value="{{products.description}}" name="description">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <label>Imagen</label>
+                <input type="text" class="form-control input-borde" value="{{products.image}}" name="image">
+            </div>
+        </div>
+        <br><br>
+        <div class="form-group">
+            <div class="col-sm-6">
+                <button class="form-control btn btn-primary btn-color" type="submit">GUARDAR</button>
+            </div>
+        </div>
+        </form>
+    </div>
+    </main>
 
-ID <input type="text" disabled value ="{{products._id}}"  name = "_id"> <br>
-    Nombre <input type="text"  value="{{products.name}}" name="name"><br>
-    Price <input type="number" value="{{products.price}}" name="price"><br>
-     Categoria<select name = "category" value="{{products.category}}">
-        <option value="computers">Computers</option>
-        <option value="phones">Phones</option>
-        <option value="accesories">Accesories</option>
-        </select><br>
-     Description <input type="text"  value="{{products.description}}" name="description"><br>
-      Image <input type="text"  value="{{products.image}}" name="image"><br>
-     <button class="btn btn-primary" type="submit">GUARDAR</button>
-    </form>

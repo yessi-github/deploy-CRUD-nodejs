@@ -10,23 +10,22 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>   -->
  <!-- <link rel="stylesheet" type="text/css" href="../static/css/index.css" th:href="@{/css/index.css}"> -->
      <link href="/static/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+     <link href="/static/css/styles.css" rel="stylesheet" id="style-css">
     <script src="/static/js/jquery.min.js"></script>  
      <script src="/static/js/bootstrap.min.js"></script>  
     
 </head>
 <body>
- <div class="jumbotron">
-        <h1 class="display-4">Hello, world!</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-            featured content or information.</p>
-        <hr class="my-4">
-        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-        </p>
-    </div>
+ <header>
+      <nav class="navbar navbar-inverse">
+        <abbr title="Ir a inicio"><a href="/"  ><img src ="static/img/home.png" class="navbar-brand iconos"></a></abbr>
+        <abbr title="Ir a insertar nuevo producto"><a href="/product"><img src ="static/img/boton-agregar.png" class="navbar-brand iconos" ></a></abbr>
+        <abbr title="Ver todos los productos"><a href="/api/products"><img src ="static/img/lista.png" class="navbar-brand iconos"></a></abbr>
+      </nav>
+    </header>
    
     {{{body}}}
-   
+<footer>Yessica Orihuela Castillo-16212054. Copyright &copy; 2021</footer>  
 </body>
+
 </html>

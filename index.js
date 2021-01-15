@@ -114,15 +114,15 @@ app.delete('/api/product/:productId',(req,res)=>{
 //Conexion a BD y levantar servidor
 //manda llamar al archivo config .js a la seccion db
 mongoose.connect(process.env.DBCONN, config.urlParser, ( err,res ) =>{
-
+//mongoose.connect(config.db, config.urlParser, ( err,res ) =>{
     if(err){
         return console.log(`Error al conectar la BD ${err}`);
     }
     console.log('Conexion a la BD exitosa');
 
     app.listen(config.port,config.host,()=>{
+        //app.listen(config.port,()=>{
         console.log(`API-REST  yeiii ejecutando en http://${config.host}:${config.port}`)
-
     });
 });
 
