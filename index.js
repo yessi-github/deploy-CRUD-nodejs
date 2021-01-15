@@ -42,7 +42,7 @@ app.post('/api/product', (req,res)=>{
         if (err) res.status(500).send({message:`Error al salvar en BD ${err}`});
         res.status(200).send({resultado:productStored});
     });
-    res.redirect('/api/products');
+    //res.redirect('/api/products');
 });
 
 app.get('/',(req,res)=>{
